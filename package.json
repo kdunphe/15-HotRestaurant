@@ -1,0 +1,23 @@
+{
+  "name": "15-hotrestaurant",
+  "version": "1.0.0",
+  "description": "Mini-project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kdunphe/15-HotRestaurant.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kdunphe/15-HotRestaurant/issues"
+  },
+  "homepage": "https://github.com/kdunphe/15-HotRestaurant#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
