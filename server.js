@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 const tableData = require("./data/tabledata");
 const waitlistData = require("./data/waitlistdata");
+const reservationArray = require("./data/tabledata");
 
 const app = express();
 const PORT = 3000;
@@ -27,11 +28,22 @@ app.get("/reserve", function(req, res) {
   });
 
 app.get("/api/tables", function(req, res) {
-    return res.json(characters);
+    return res.json(tableData);
   });
 
 app.get("/api/reserve", function(req, res) {
-    return res.json(characters);
+    return res.json(waitlistData);
+  });
+
+  // post reservations
+  app.post("api/tables/tableData", function(req,res) {
+    const newReservation = req.body;
+
+    newReservation.routeName = newReservation.name.replace(/\s+/g, "").toLowerCase();
+
+    reservationArray.push(newReservation);
+
+    res.json(newReservation);
   });
 
 
