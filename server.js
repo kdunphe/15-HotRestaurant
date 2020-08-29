@@ -11,10 +11,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 
-
-
-
-
 app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "home.html"));
   });
@@ -35,11 +31,13 @@ app.get("/api/reserve", function(req, res) {
     return res.json(waitlistData);
   });
 
-  // post reservations
-  app.post("api/tables/tableData", function(req,res) {
-    const newReservation = req.body;
+app.post("/api/reserve", function(req, res) {
+    return res.json(waitlistData);
+  });
 
-    newReservation.routeName = newReservation.name.replace(/\s+/g, "").toLowerCase();
+  // post reservations
+  app.post("/api/tables", function(req, res) {
+    const newReservation = req.body;
 
     reservationArray.push(newReservation);
 
