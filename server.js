@@ -1,4 +1,6 @@
 const express = require("express");
+const tableData = require("./data/tabledata")
+const waitlistData = require("./data/waitlistdata")
 
 const app = express()
 const PORT = 3000;
