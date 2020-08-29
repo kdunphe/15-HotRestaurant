@@ -1,8 +1,9 @@
 const express = require("express");
-const tableData = require("./data/tabledata")
-const waitlistData = require("./data/waitlistdata")
+const path = require("path");
+const tableData = require("./data/tabledata");
+const waitlistData = require("./data/waitlistdata");
 
-const app = express()
+const app = express();
 const PORT = 3000;
 
 app.use(express.urlencoded({ extended: true }));
